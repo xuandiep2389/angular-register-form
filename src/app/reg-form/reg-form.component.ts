@@ -14,9 +14,9 @@ export class RegFormComponent implements OnInit {
     firstName:['', Validators.required],
     lastName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    dob: [''],
+    dob: ['', Validators.required],
     gender: [''],
-    city: ['']
+    city: ['', Validators.required]
   });
 
   ngOnInit() {
@@ -34,5 +34,5 @@ export class RegFormComponent implements OnInit {
     console.warn(this.regForm.value);
   }
 
-  cities = ['Hanoi', 'Saigon', 'Singapore', 'New York', 'Tokyo'];
+  cities = ['Hanoi', 'Saigon', 'Singapore', 'New York', 'Tokyo', 'Other city'];
 }

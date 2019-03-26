@@ -40,9 +40,15 @@
   <div class="form-group row">
     <label for="dob" class="col-sm-2 col-form-label">DOB</label>
     <div class="col-sm-10">
-      <input id="dob" class="form-control" type="date" formControlName="dob">
+      <input id="dob" class="form-control" type="date" formControlName="dob" min="1930-01-01" max="2000-01-01"required>
+
+
+      <div *ngIf="dob.invalid && dob.touched " class="alert alert-danger">
+        <div *ngIf="dob.errors.required">Date of birth is required.</div>
+      </div>
     </div>
   </div>
+
 
 
   <fieldset class="form-group">
@@ -71,7 +77,12 @@
       <select id="city" class="form-control" formControlName="city">
         <option *ngFor="let city of cities" [value]="city">{{city}}</option>
       </select>
+
+      <div *ngIf="city.invalid && city.touched " class="alert alert-danger">
+        <div *ngIf="city.errors.required">City is required.</div>
+      </div>
     </div>
+
   </div>
 
   <div class="form-group row">
