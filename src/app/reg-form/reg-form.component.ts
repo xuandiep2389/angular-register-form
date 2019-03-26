@@ -16,7 +16,8 @@ export class RegFormComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]],
     dob: ['', Validators.required],
     gender: [''],
-    city: ['', Validators.required]
+    city: ['', Validators.required],
+    agree: ['', Validators.requiredTrue]
   });
 
   ngOnInit() {
@@ -29,6 +30,7 @@ export class RegFormComponent implements OnInit {
   get dob() { return this.regForm.get('dob')};
   get gender() { return this.regForm.get('gender')};
   get city() { return this.regForm.get('city')};
+  get agree() { return this.regForm.get('agree')};
 
   onSubmit(){
     console.warn(this.regForm.value);
